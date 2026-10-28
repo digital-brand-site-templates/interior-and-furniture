@@ -1,0 +1,87 @@
+{
+  "name": "tpl-interior-and-furniture-interior-vale",
+  "version": "2.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "npx serve src",
+    "build": "echo static site, no build step",
+    "verify": "echo static site, nothing to verify"
+  },
+  "dependencies": {},
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "agentMeta": {
+    "category": "interior-and-furniture",
+    "idealFor": [
+      "interior design studios",
+      "interior architects",
+      "home staging and decor consultants"
+    ],
+    "buildOutputDir": "src",
+    "customizationMap": {
+      "themeColors": "src/css/style.css",
+      "siteMetadata": "src/index.html (<head> title and meta tags)",
+      "navigation": "src/about.html (<header>/<nav> block, repeated in each page)",
+      "pagesDir": "src"
+    },
+    "requiredClientInputs": [
+      "studioName",
+      "primaryColorHex",
+      "logoUrl",
+      "contactEmail",
+      "phoneNumber",
+      "portfolioProjectImages"
+    ]
+  },
+  "source": {
+    "vendor": "ThemeVault",
+    "vendorUrl": "https://www.themevault.net",
+    "templateName": "Interiorvale",
+    "originalPackage": "interior-and-furniture-interiorvale.zip",
+    "originalSha256": "8a43fffb4ae171db99f5bf4ae80a09b4fba388dd5454561876cecf4d68760c3f",
+    "downloadHistory": [
+      {
+        "date": "2026-10-28T13:35:57-04:00",
+        "orderNumber": "TVORD41731621",
+        "file": "interior-and-furniture-interiorvale.zip",
+        "retrievedFrom": "ThemeVault account download"
+      }
+    ],
+    "licenseHistory": [
+      {
+        "orderNumber": "TVORD41731621",
+        "purchaseDate": "2026-10-28T17:35:22Z",
+        "amount": 0.0,
+        "currency": "USD",
+        "receiptNumber": null,
+        "licenseType": "Template download (standard package)",
+        "creditRemovalPermitted": true,
+        "evidence": "Your ThemeVault order TVORD41731621 (email dated 2026-10-28T17:35:22Z)"
+      },
+      {
+        "orderNumber": "TVORD30331596",
+        "purchaseDate": "2026-10-27T18:24:00Z",
+        "orderCreated": "2026-10-27T18:20:00Z",
+        "amount": 129.0,
+        "currency": "USD",
+        "receiptNumber": null,
+        "paymentReferenceNumber": "69F57224VW8877631",
+        "paypalTransactionId": "2G4401177R3504237",
+        "paymentMethod": "PayPal",
+        "licenseType": "Pro \u2014 Lifetime",
+        "scope": "account-wide plan; the proof does not name specific templates",
+        "creditRemovalPermitted": null,
+        "evidence": "Email 'Fwd: Your ThemeVault order TVORD30331596' from danummer@gmail.com, received 2026-10-28T16:54Z (original 2026-10-27 2:24 PM EDT), with attachment 'ThemeVault License.pdf' (order page printout, 10/28/26)"
+      }
+    ],
+    "modifications": [
+      "Removed ThemeVault footer credit and backlink comment",
+      "Added preview.png, package.json, AGENTS.md"
+    ],
+    "missing": [
+      "receiptNumber (ThemeVault emails/PDF show no receipt number; see paymentReferenceNumber)"
+    ],
+    "originalTemplateName": "Interiorvale"
+  }
+}

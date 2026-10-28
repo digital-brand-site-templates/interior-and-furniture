@@ -1,0 +1,115 @@
+/* InteriorVale improvements (owner, pilot: "can you improve it?") — everything scoped under body.tv-modern; removing the class
+   restores the v1 look (the added pieces are hidden without it, bs5-shim.css). One block per section, each removable on its own.
+   v1's palette only: ink #191919, lime #cee002, grey #595f62, paper #f6f6f6. */
+
+body.tv-modern { --tv-ink: #191919; --tv-lime: #cee002; --tv-grey: #595f62; --tv-paper: #f6f6f6; }
+
+/* ---- I1 · splash: a light wash behind the words, larger type, a line of copy, a second action, contact strip, slow zoom ---- */
+body.tv-modern .tv-owl-slider-img { background-image: none; }
+body.tv-modern .tv-owl-slider-img::before { content: ""; position: absolute; inset: 0; background: url(../images/slider-img-1.jpg) center / cover no-repeat; animation: tv-ken 22s ease-out both; }
+body.tv-modern .tv-owl-slider-img::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(246, 246, 246, .94) 0%, rgba(246, 246, 246, .8) 34%, rgba(246, 246, 246, 0) 68%); }
+body.tv-modern .tv-owl-slider-img > .container { z-index: 1; }
+@keyframes tv-ken { from { transform: scale(1.08); } to { transform: scale(1); } }
+@media (prefers-reduced-motion: reduce) { body.tv-modern .tv-owl-slider-img::before { animation: none; } }
+body.tv-modern .tv-slider-content-middle .tv-green-line::before { width: 56px; height: 4px; }
+body.tv-modern .tv-slider-content-middle h3 { margin: 18px 0 20px; font-size: 34px; line-height: 1.12; letter-spacing: .03em; }
+body.tv-modern .tv-slider-content-middle h3 span { display: inline-block; font-size: 76px; line-height: 1; letter-spacing: .01em; }
+body.tv-modern .tv-hero-extra { display: block; }
+body.tv-modern .tv-hero-sub { clear: both; max-width: 430px; text-align: left; margin: 0 0 8px; font-size: 16px; line-height: 1.65; color: #3a3f42; }
+body.tv-modern .tv-hero-actions { display: flex; clear: both; flex-wrap: wrap; gap: 14px; }
+body.tv-modern .tv-hero-actions .btn { float: none; margin: 12px 0 0; }
+body.tv-modern .tv-btn-outline { background: transparent; border-color: var(--tv-ink); color: var(--tv-ink); padding: 14px 28px 13px; }
+body.tv-modern .tv-btn-outline:hover, body.tv-modern .tv-btn-outline:focus-visible { background: var(--tv-ink); border-color: var(--tv-ink); color: #fff; }
+body.tv-modern .tv-splash-foot { position: absolute; left: 0; right: 0; bottom: 26px; z-index: 1; }
+body.tv-modern .tv-splash-foot .container { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 24px; }
+body.tv-modern .tv-splash-contact { display: flex; flex-wrap: wrap; gap: 6px 22px; margin: 0; font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+body.tv-modern .tv-splash-contact a { color: var(--tv-ink); }
+body.tv-modern .tv-splash-contact a:hover { color: var(--tv-grey); text-decoration: none; }
+/* tablet: the copy column is ~60% of the width, so the wash reaches further */
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  body.tv-modern .tv-owl-slider-img::after { background: linear-gradient(90deg, rgba(246, 246, 246, .95) 0%, rgba(246, 246, 246, .88) 50%, rgba(246, 246, 246, 0) 88%); }
+}
+@media (max-width: 767.98px) {
+  body.tv-modern .tv-owl-slider-img::after { background: linear-gradient(180deg, rgba(246, 246, 246, .9) 0%, rgba(246, 246, 246, .82) 55%, rgba(246, 246, 246, .55) 100%); }
+  body.tv-modern .tv-slider-content-middle h3 { font-size: 26px; }
+  body.tv-modern .tv-slider-content-middle h3 span { font-size: 50px; }
+  body.tv-modern .tv-hero-sub { font-size: 15px; }
+  body.tv-modern .tv-splash-contact .tv-splash-phone { display: none; }
+}
+
+/* ---- shared: square social icons in v1's line style ---- */
+body.tv-modern .tv-social { display: flex; gap: 8px; margin: 0; padding: 0; list-style: none; }
+body.tv-modern .tv-social a { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border: 1px solid currentColor; color: inherit; font-size: 14px; transition: background-color .2s ease, color .2s ease, border-color .2s ease; }
+body.tv-modern .tv-social a:hover, body.tv-modern .tv-social a:focus-visible { background: var(--tv-ink); border-color: var(--tv-ink); color: var(--tv-lime); text-decoration: none; }
+
+/* ---- I2 · header: a "Book a consultation" action beside the page label on desktop, a shadow once the page scrolls ---- */
+body.tv-modern .tv-header { transition: box-shadow .3s ease; }
+body.tv-modern .tv-header.tv-scrolled { box-shadow: 0 6px 20px rgba(0, 0, 0, .14); }
+/* 992+ only: v1's responsive.css hides the page label on phones, and a display here would bring it back */
+@media (min-width: 992px) { body.tv-modern .tv-head-title { display: flex; align-items: center; gap: 10px; } body.tv-modern .tv-head-cta-wrap { display: block; } }
+body.tv-modern .tv-head-cta { display: inline-block; padding: 8px 20px; background: var(--tv-ink); color: #fff; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; transition: background-color .2s ease, color .2s ease; }
+body.tv-modern .tv-head-cta:hover, body.tv-modern .tv-head-cta:focus-visible { background: #fff; color: var(--tv-ink); text-decoration: none; }
+
+/* ---- I3 · menu: a dark full-height panel, numbered links in Oswald, lime for the current page, contact + social at the foot ---- */
+body.tv-modern .nav-inner { display: flex; flex-direction: column; width: 340px; left: -360px; padding: 36px 44px 30px; background: var(--tv-ink); color: #b9bec1; transition: left .3s cubic-bezier(.2, .7, .2, 1); }
+body.tv-modern .nav-inner.visible { left: 0; }
+body.tv-modern .nav-inner nav { float: none; flex: 1 0 auto; padding-top: 12px; }
+body.tv-modern .nav-inner nav > ul { margin: 0; padding: 0; list-style: none; counter-reset: tv-nav; }
+body.tv-modern .nav-inner nav > ul > li { float: none; counter-increment: tv-nav; padding: 0; border-bottom: 1px solid rgba(255, 255, 255, .08); opacity: 0; transform: translateX(-14px); transition: opacity .35s ease, transform .35s ease; }
+body.tv-modern .nav-inner.visible nav > ul > li { opacity: 1; transform: none; }
+body.tv-modern .nav-inner.visible nav > ul > li:nth-child(2) { transition-delay: .04s; } body.tv-modern .nav-inner.visible nav > ul > li:nth-child(3) { transition-delay: .08s; }
+body.tv-modern .nav-inner.visible nav > ul > li:nth-child(4) { transition-delay: .12s; } body.tv-modern .nav-inner.visible nav > ul > li:nth-child(5) { transition-delay: .16s; }
+body.tv-modern .nav-inner.visible nav > ul > li:nth-child(6) { transition-delay: .2s; } body.tv-modern .nav-inner.visible nav > ul > li:nth-child(7) { transition-delay: .24s; }
+body.tv-modern .nav-inner nav > ul > li > a { display: flex; align-items: baseline; gap: 16px; padding: 13px 0; color: #fff; font-family: "Oswald", sans-serif; font-size: 22px; font-weight: 400; letter-spacing: .08em; transition: color .2s ease, padding-left .2s ease; }
+body.tv-modern .nav-inner nav > ul > li > a::before { content: counter(tv-nav, decimal-leading-zero); font-family: "Open Sans", sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .12em; color: #8d9396; }
+body.tv-modern .nav-inner nav > ul > li > a:hover, body.tv-modern .nav-inner nav > ul > li > a:focus-visible { color: var(--tv-lime); padding-left: 6px; text-decoration: none; }
+body.tv-modern .nav-inner nav > ul > li.active > a { color: var(--tv-lime); text-decoration: none !important; }
+body.tv-modern .nav-inner nav > ul > li.active > a::before { color: var(--tv-lime); }
+/* the blog sub-menu: always open in the panel (v1 needed a hover, which a phone has not got), small caps under "blog" */
+body.tv-modern .nav-inner .tv-sub-menu > ul { display: block; margin: -6px 0 12px 32px; padding: 0; list-style: none; }
+body.tv-modern .nav-inner .tv-sub-menu > ul > li { float: none; width: auto; padding: 0; border: 0; }
+body.tv-modern .nav-inner .tv-sub-menu > ul > li > a { display: block; padding: 5px 0; color: #b9bec1; font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+body.tv-modern .nav-inner .tv-sub-menu > ul > li > a:hover, body.tv-modern .nav-inner .tv-sub-menu > ul > li > a:focus-visible { color: var(--tv-lime); text-decoration: none; }
+body.tv-modern .nav-inner .tv-sub-menu > ul > li.active > a { color: var(--tv-lime); text-decoration: none !important; }
+body.tv-modern .tv-menu-foot { display: block; margin-top: 26px; font-size: 13px; line-height: 1.7; }
+body.tv-modern .tv-menu-foot p { margin: 0 0 4px; }
+body.tv-modern .tv-menu-foot .tv-menu-kicker { margin-bottom: 10px; font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--tv-lime); }
+body.tv-modern .tv-menu-foot a { color: #fff; }
+body.tv-modern .tv-menu-foot a:hover { color: var(--tv-lime); text-decoration: none; }
+body.tv-modern .tv-menu-foot .tv-social { margin-top: 16px; color: #fff; }
+body.tv-modern .nav-inner .tv-social li { float: none; width: auto; padding: 0; border: 0; } /* v1's ".nav-inner nav li" (full-width rows, bottom rule) reached the icons */
+body.tv-modern .tv-menu-foot .tv-social a:hover, body.tv-modern .tv-menu-foot .tv-social a:focus-visible { background: var(--tv-lime); border-color: var(--tv-lime); color: var(--tv-ink); }
+@media (max-width: 479.98px) { body.tv-modern .nav-inner { width: 86vw; left: -90vw; padding: 26px 28px 24px; } body.tv-modern .nav-inner nav > ul > li > a { font-size: 20px; } }
+
+/* ---- I4 · project cards: a dark wash from the bottom so every caption reads, category above the title, a gentle zoom ---- */
+body.tv-modern .project figure::after, body.tv-modern .project.project-light figure::after { opacity: 1; background: linear-gradient(180deg, rgba(17, 17, 17, 0) 38%, rgba(17, 17, 17, .82) 100%); }
+body.tv-modern .project figure:hover::after { opacity: 1; background: linear-gradient(180deg, rgba(17, 17, 17, .15) 0%, rgba(17, 17, 17, .88) 100%); }
+body.tv-modern .project figure img { transition: transform .9s cubic-bezier(.2, .6, .2, 1); }
+body.tv-modern .project figure:hover img { transform: scale(1.06); }
+body.tv-modern .project figcaption { top: auto; margin: 0; padding: 26px 30px 28px; display: flex; flex-direction: column; }
+body.tv-modern .project-category { position: static; order: -1; margin: 0 0 8px; transform: none; font-family: "Open Sans", sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--tv-lime); }
+body.tv-modern .project-title { font-size: 24px; line-height: 1.2; text-shadow: 0 1px 12px rgba(0, 0, 0, .35); }
+body.tv-modern .project figure:hover .project-title { opacity: 1; top: 0; }
+body.tv-modern .project figure:hover .project-category { opacity: 1; letter-spacing: .22em; }
+body.tv-modern .project-zoom { top: 22px; left: auto; right: 22px; width: 46px; height: 46px; margin: 0; background: var(--tv-lime); transform: scale(.7); }
+body.tv-modern .project-zoom::after { content: "\f061"; font-family: "Font Awesome 6 Free"; font-weight: 900; font-size: 16px; color: var(--tv-ink); }
+body.tv-modern .project figure:hover .project-zoom { transform: scale(1); }
+body.tv-modern .project a:focus-visible { outline: 3px solid var(--tv-lime); outline-offset: -3px; }
+@media (max-width: 767.98px) { body.tv-modern .project figcaption { padding: 20px 20px 22px; } body.tv-modern .project-title { font-size: 21px; } }
+
+/* ---- I5 · filter: v1's hidden corner tab becomes a sticky bar of pills above the grid, each with its project count ---- */
+body.tv-modern .tv-filter-projects-btn { display: none; }
+body.tv-modern .tv-filter-projects { position: sticky; top: 60px; right: auto; bottom: auto; z-index: 6; width: auto; height: auto; margin: 0 -15px; padding: 14px 25px; overflow-x: auto; background: rgba(246, 246, 246, .96); border-bottom: 1px solid rgba(25, 25, 25, .08); scrollbar-width: none; }
+body.tv-modern .tv-filter-projects::-webkit-scrollbar { display: none; }
+body.tv-modern .portfolio-filter { float: none; top: auto; display: flex; gap: 8px; width: auto; margin: 0; }
+body.tv-modern .portfolio-filter button { float: none; width: auto; margin: 0; padding: 8px 16px; border: 1px solid rgba(25, 25, 25, .22); border-radius: 999px; font-size: 12px; letter-spacing: .14em; white-space: nowrap; transition: background-color .2s ease, color .2s ease, border-color .2s ease; }
+body.tv-modern .portfolio-filter button:hover { border-color: var(--tv-ink); }
+body.tv-modern .portfolio-filter > button.active, body.tv-modern .portfolio-filter > button.active:hover { background: var(--tv-ink); border-color: var(--tv-ink); color: #fff; text-decoration: none; }
+body.tv-modern .portfolio-filter button:focus-visible { outline: 2px solid var(--tv-ink); outline-offset: 2px; }
+body.tv-modern .tv-count { display: inline-block; margin-left: 6px; opacity: .6; font-weight: 600; letter-spacing: 0; }
+
+/* ---- I6 · footer: v1's lime bar keeps its height; email and social on the right from tablet up, a readable credit link ---- */
+body.tv-modern .tv-copyright p a { color: var(--tv-ink); text-decoration: underline; }
+@media (min-width: 768px) { body.tv-modern .tv-foot-extra { display: flex; align-items: center; gap: 18px; } }
+body.tv-modern .tv-foot-extra > a { color: var(--tv-ink); font-size: 13px; font-weight: 600; }
+body.tv-modern .tv-foot-extra .tv-social a { width: 30px; height: 30px; font-size: 13px; }

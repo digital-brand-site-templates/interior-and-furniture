@@ -1,0 +1,31 @@
+InteriorVale — Interior Design Website Template
+===============================================
+
+Version 2.0 — 2026
+-------------------
+
+- Rebuilt on Bootstrap 5 with no jQuery: the slide-out menu, the project
+  filter, the blog's Masonry grid, the journal search, the lightbox and
+  every form are plain JavaScript (js/main.js). Font Awesome 4 -> 6; Open
+  Sans, Oswald and Libre Baskerville are self-hosted instead of fetched
+  from Google.
+- Five new pages: a project case study (brief, approach, results, gallery
+  and a client quote), a service detail page (what is included, how we
+  work, FAQ), a consultation booking form, a pricing page with three
+  packages, and a 404 page. Project cards, service buttons and a new
+  header "Book a consultation" button lead to them.
+- Three ready-to-send HTML emails: contact auto-reply, comment received
+  and consultation booked (email-*.html).
+- Real interior-design copy in place of 79 blocks of lorem ipsum: the
+  about story, four services, nine journal posts, the blog post with its
+  comments, sidebar and tags, and the contact details.
+- A refreshed look in the same black and lime: a lighter splash page with
+  a second call to action, a dark numbered menu, readable project
+  captions, a pinned filter bar with project counts, and team cards that
+  show names and roles on every device.
+- The contact map no longer needs a Google Maps API key (v1 shipped a
+  live key); the journal search now shows matching posts; Likes and Share
+  on the blog work; every form is labelled, validates and confirms.
+- Fixes: 103 dead links (21 of them reloaded the page), a Bootstrap 4
+  grid that broke on tablets, hover-only team details that phones never
+  showed, and the page scrolling inside a box instead of the window.

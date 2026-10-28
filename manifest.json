@@ -1,0 +1,33 @@
+{
+  "category": "interior-and-furniture",
+  "templates": [
+    {
+      "name": "Interior-Vale",
+      "folder": "interior-vale",
+      "version": "2.0.0",
+      "description": "Interior-Vale \u2013 static HTML/Bootstrap Interior & Furniture website template.",
+      "idealFor": [
+        "interior design studios",
+        "interior architects",
+        "home staging and decor consultants"
+      ],
+      "requiredClientInputs": [
+        "studioName",
+        "primaryColorHex",
+        "logoUrl",
+        "contactEmail",
+        "phoneNumber",
+        "portfolioProjectImages"
+      ],
+      "preview": "interior-vale/preview.png",
+      "orderNumber": "TVORD41731621",
+      "license": {
+        "templateOrderAmount": 0.0,
+        "creditRemovalPermitted": true,
+        "accountLicense": [
+          "TVORD30331596 Pro \u2014 Lifetime"
+        ]
+      }
+    }
+  ]
+}
